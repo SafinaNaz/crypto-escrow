@@ -1,0 +1,6 @@
+
+.starsRating{background:url(../img/stars.png) repeat-x 0 0;width:100%;float:left;margin:0px;background-size:24px 80px;width:124px;}
+.starsRating label{display:block;width:30px;height:30px;margin:0!important;padding:0!important;text-indent:-999em;float:left;position:relative;z-index:10;background:transparent!important;cursor:pointer;}
+.starsRating label ~ span{background-position:0 -60px;}
+.starsRating label.star-1 ~ span{width:10% !important;}
+.starsRating span{display:block;width:0;position:relative;top:0;left:0;height:30px;background:url("../img/stars.png") repeat-x 0 -60px;-webkit-transition:-webkit-width 0.5s;-moz-transition:-moz-width 0.5s;-ms-transition:-ms-width 0.5s;-o-transition:-o-width 0.5s;transition:width 0.5s;background-size:24px 88px !important;}

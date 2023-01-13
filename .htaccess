@@ -1,0 +1,18 @@
+# STRONG HTACCESS PROTECTION
+<Files ~ "^.*\.([Ee][Nn][Vv])">
+    order allow,deny
+    deny from all
+    satisfy all
+</Files>
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^.well-known/ - [L,NC]
+    RewriteRule ^index_event.php - [L,NC]
+    RewriteCond     %{SERVER_PORT} ^80$
+	RewriteRule     ^(.*)$ http://%{SERVER_NAME}%{REQUEST_URI} [L,R]
+    RewriteCond %{REQUEST_URI} !^public
+    RewriteRule ^(.*)$ public/$1 [L]
+</IfModule>
+<IfModule mod_headers.c>
+   Header set Access-Control-Allow-Origin "*"
+</IfModule>
